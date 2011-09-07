@@ -1,4 +1,6 @@
 Bootstrap::Application.routes.draw do
+  match 'demo/overview' => 'demo#overview'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
