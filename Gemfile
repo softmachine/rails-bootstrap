@@ -5,8 +5,6 @@ gem 'rails', '3.1.0'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -22,6 +20,7 @@ gem 'tilt', :git => 'git://github.com/thisduck/tilt.git'
 gem 'less-js'
 
 group :development do
+  gem 'sqlite3'
   gem 'rspec-rails', '2.6.1'
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
 end
@@ -38,5 +37,6 @@ end
 
 group :test do
   # Pretty printed test output
+  gem 'sqlite3'
   gem 'turn', :require => false
 end
