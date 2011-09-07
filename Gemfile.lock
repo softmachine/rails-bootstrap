@@ -1,10 +1,4 @@
 GIT
-  remote: git://github.com/ctran/annotate_models.git
-  revision: 634b6ac1ccf4d9f0ddfecfc8123a58adf3d20eb8
-  specs:
-    annotate (2.4.1.beta1)
-
-GIT
   remote: git://github.com/thisduck/tilt.git
   revision: a61592ebf52f48a5e94d1faadb227002013daccb
   specs:
@@ -137,7 +131,6 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  annotate!
   coffee-rails (~> 3.1.0)
   jquery-rails
   less-js

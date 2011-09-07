@@ -22,7 +22,7 @@ gem 'less-js'
 group :development do
   gem 'sqlite3'
   gem 'rspec-rails', '2.6.1'
-  gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
+  #gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
 end
 
 
