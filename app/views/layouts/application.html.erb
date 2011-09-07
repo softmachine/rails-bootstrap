@@ -38,10 +38,10 @@
         <div class="container">
           <h3><%=  link_to "Bootstrap", :action => "index"%></h3>
           <ul class="nav">
-            <li class="active"><%= link_to "Home", :action => "home" %></li>
-            <li><%= link_to "Links", :action => "notyet", :id => "links"  %></li>
-            <li><%= link_to "Contact", :action => "notyet", :id => "contact"  %></li>
-            <li><%= link_to "About", :action => "notyet", :id => "about"  %></li>
+            <%= nav_item "Home", {:action => 'home'} %>
+            <%= nav_item "Documentation", {:controller => 'doc'} %>
+            <%= nav_item "Contact", {:action => 'notyet', :id => 'contact'} %>
+            <%= nav_item "About", {:action => 'notyet', :id => 'about'} %>
           </ul>
         </div>
       </div>

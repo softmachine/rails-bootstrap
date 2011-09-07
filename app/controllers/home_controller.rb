@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-    render :action => 'home'
+    redirect_to :action => 'home'
   end
 
   def home

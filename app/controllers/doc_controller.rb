@@ -3,7 +3,7 @@ class DocController < ApplicationController
   layout "bootstrap/doc"
 
   def index
-     render :action => "overview"
+     redirect_to :action => "overview"
   end
 
   def static
