@@ -1,14 +1,91 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Bootstrap</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap, from Twitter</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<%= yield %>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-</body>
+    <!-- Le styles -->
+    <%= stylesheet_link_tag    "application" %>
+
+    <!-- Le javascript -->
+    <%= javascript_include_tag "application" %>
+    <script src="http://autobahn.tablesorter.com/jquery.tablesorter.min.js"></script>
+
+
+
+    <!-- Le fav and touch icons -->
+    <!--<link rel="shortcut icon" href="images/favicon.ico">-->
+    <!--<link rel="apple-touch-icon" href="images/apple-touch-icon.png">-->
+    <!--<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">-->
+    <!--<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">-->
+
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+
+    <!-- Topbar
+    ================================================== -->
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="container">
+          <h3><%=  link_to "Bootstrap", :action => "index"%></h3>
+          <ul class="nav">
+            <li class="active"><%= link_to "Home", :action => "home" %></li>
+            <li><%= link_to "Links", :action => "notyet", :id => "links"  %></li>
+            <li><%= link_to "Contact", :action => "notyet", :id => "contact"  %></li>
+            <li><%= link_to "About", :action => "notyet", :id => "about"  %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Masthead (blueprinty thing)
+    ================================================== -->
+    <div id="masthead">
+      <div class="inner">
+        <div class="container">
+          <h1>Bootstrap Samples</h1>
+          <!--<p class="lead">-->
+            <!--Bootstrap is a toolkit from Twitter designed to kickstart development of webapps and sites.<br />-->
+            <!--It includes base CSS and HTML for typography, forms, buttons, tables, grids, navigation, and more.<br />-->
+          <!--</p>-->
+          <!--<p><strong>Nerd alert:</strong> Bootstrap is <a href="#less" title="Read about using Bootstrap with Less">built with Less</a> and was designed to work out of the gate with modern browsers in mind.</p>-->
+        </div><!-- /container -->
+      </div>
+    </div>
+
+    <% if content_for?(:no_container) %>
+        <%= yield (:no_container) %>
+    <% else %>
+      <div class="container">
+          <%= yield %>
+      </div><!-- /container -->
+    <%end %>
+
+
+    <div id="footer">
+      <div class="inner">
+        <div class="container">
+          <p class="right"><a href="#">Back to top</a></p>
+          <p>
+            Designed and built with all the love in the world
+            <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by
+            <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.<br />
+            Put to good use by <a href="http://twitter.com/mkuhl" target="_blank">@mkuhl</a> for
+            <a href="http://twitter.com/softmachine_vie" target="_blank">@softmachine_vie</a>
+          </p>
+          <p> Still Licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. </p>
+        </div>
+      </div>
+    </div>
+
+  </body>
 </html>

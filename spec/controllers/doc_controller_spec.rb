@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe DemoController do
+describe DocController do
 
 end

@@ -1,9 +1,13 @@
-class DemoController < ApplicationController
-  # this is the original brcken down in parts and layout. this should be pretty re-usable
-  layout "bootstrap"
+class DocController < ApplicationController
+  # this is the original doc. broken down in parts and layout. this should be pretty re-usable
+  layout "bootstrap/doc"
 
   def index
      render :action => "overview"
+  end
+
+  def static
+    render :text => "", :layout => 'bootstrap/static'
   end
 
   def overview
