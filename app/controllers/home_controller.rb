@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  before_filter :authenticate_user!, :only => 'secret'
 
   def index
     redirect_to :action => 'home'
@@ -8,6 +9,11 @@ class HomeController < ApplicationController
   end
 
   def notyet
+
+  end
+
+  def secret
+
 
   end
 

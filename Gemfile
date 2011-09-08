@@ -18,6 +18,7 @@ gem 'jquery-rails'
 
 gem 'tilt', :git => 'git://github.com/thisduck/tilt.git'
 gem 'less-js'
+gem 'devise'
 
 group :development do
   gem 'sqlite3'

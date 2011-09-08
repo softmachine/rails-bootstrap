@@ -43,6 +43,16 @@
             <%= nav_item "Contact", {:action => 'notyet', :id => 'contact'} %>
             <%= nav_item "About", {:action => 'notyet', :id => 'about'} %>
           </ul>
+
+          <ul class="nav secondary-nav">
+            <% if user_signed_in? %>
+                <li><%= link_to(current_user.email, edit_user_registration_path) %></li>
+                <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+            <% else %>
+                <li><%= link_to('Login', new_user_session_path) %></li>
+                <li><%= link_to('Register', new_user_registration_path) %></li>
+            <%end %>
+          </ul>
         </div>
       </div>
     </div>
@@ -66,7 +76,8 @@
         <%= yield (:no_container) %>
     <% else %>
       <div class="container">
-          <%= yield %>
+         <%= render :partial => 'shared/flash_msg' %>
+         <%= yield %>
       </div><!-- /container -->
     <%end %>
 
