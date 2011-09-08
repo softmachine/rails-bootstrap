@@ -25,6 +25,10 @@ group :development do
   #gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
 end
 
+group :production do
+  gem 'pg'
+end
+
 
 # Use unicorn as the web server
 # gem 'unicorn'
