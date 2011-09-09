@@ -1,0 +1,62 @@
+<section id="signup">
+  <div class="page-header">
+    <h1>Sign up</h1>
+  </div>
+  <div class="row">
+    <div class="span4 columns">
+      <!--<h3>Default styles</h3>-->
+      <p>please enter a valid email address since it will be used to send an confirmation email to you</p>
+      <p>your data will only be used to as part of this service and never given to any third parties. And we will not
+      spam you. ever. </p>
+    </div>
+
+    <div class="span12 columns">
+      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+        <fieldset>
+          <!--<legend>User fields</legend>-->
+
+          <!-- name -->
+          <div class="clearfix">
+            <%= f.label :name %>
+            <div class="input">
+                <%= f.text_field :name, :class=> "xlarge" %>
+            </div>
+          </div><!-- /clearfix -->
+
+          <!-- email -->
+          <div class="clearfix">
+            <%= f.label :email %>
+            <div class="input">
+                <%= f.email_field :email, :class=> "xlarge" %>
+            </div>
+          </div><!-- /clearfix -->
+
+          <!-- password -->
+          <div class="clearfix">
+            <%= f.label :password %>
+            <div class="input">
+              <%= f.password_field :password, :class => "xlarge" %>
+            </div>
+          </div><!-- /clearfix -->
+
+          <!-- password confirmation-->
+          <div class="clearfix">
+            <%= f.label :password_confirmation %>
+            <div class="input">
+              <%= f.password_field :password_confirmation, :class => "xlarge" %>
+            </div>
+          </div><!-- /clearfix -->
+
+          <div class="actions">
+            <input type="submit" value="Sign Up !" class="btn primary">&nbsp;
+            <button class="btn" type="reset">Cancel</button>
+          </div>
+        </fieldset>
+      <% end %>
+      <%= render :partial => "devise/shared/links" %>
+    </div>
+
+  </div><!-- /row -->
+  <br>
+</section>

@@ -1,0 +1,70 @@
+<section id="signup">
+  <div class="page-header">
+    <h1>Edit <%= resource_name.to_s.humanize %></h1>
+  </div>
+  <div class="row">
+    <div class="span4 columns">
+      <h3></h3>
+      <p>please not that the email address is used to identify the account and
+      cannot be changed.</p>
+    </div>
+
+    <div class="span12 columns">
+      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+        <%= devise_error_messages! %>
+        <fieldset>
+          <!--<legend>User fields</legend>-->
+
+          <!-- name -->
+          <div class="clearfix">
+            <%= f.label :name %>
+            <div class="input">
+                <%= f.text_field :name, :class=> "xlarge" %>
+            </div>
+          </div><!-- /clearfix -->
+
+          <!-- email -->
+          <div class="clearfix">
+            <%= f.label :email %>
+            <div class="input">
+                <%= f.email_field :email, :class=> "xlarge" %>
+            </div>
+          </div><!-- /clearfix -->
+
+          <!-- password -->
+          <div class="clearfix">
+            <%= f.label :password %>
+            <div class="input">
+              <%= f.password_field :password, :class => "xlarge" %>
+            </div>
+          </div><!-- /clearfix -->
+
+          <!-- password confirmation-->
+          <div class="clearfix">
+            <%= f.label :password_confirmation %>
+            <div class="input">
+              <%= f.password_field :password_confirmation, :class => "xlarge" %>
+            </div>
+          </div><!-- /clearfix -->
+
+          <!-- current password -->
+          <div class="clearfix">
+            <%= f.label :current_password  %>
+            <div class="input">
+              <%= f.password_field :current_password , :class => "xlarge" %>
+              <span class="help-block"><strong>Note:</strong> we need your current password to confirm your changes.</span>
+            </div>
+          </div><!-- /clearfix -->
+
+          <div class="actions">
+            <input type="submit" value="Update" class="btn primary">&nbsp;
+            <!--<button class="btn" type="reset">Cancel</button>-->
+          </div>
+        </fieldset>
+      <% end %>
+      <%= render :partial => "devise/shared/links" %>
+    </div>
+
+  </div><!-- /row -->
+  <br>
+</section>
