@@ -13,10 +13,10 @@
 
     <!-- Le styles -->
     <%= stylesheet_link_tag    "application" %>
+    <%= stylesheet_link_tag    "demo/demo" %>
 
     <!-- Le javascript -->
     <%= javascript_include_tag "application" %>
-    <script src="http://autobahn.tablesorter.com/jquery.tablesorter.min.js"></script>
 
     <!-- Le fav and touch icons -->
     <!--<link rel="shortcut icon" href="images/favicon.ico">-->
@@ -34,7 +34,7 @@
     <div class="topbar">
       <div class="topbar-inner">
         <div class="container">
-          <h3><%=  link_to "Bootstrap", :action => "index"%></h3>
+          <h3><a href="<%= url_for(:action => "index")%>"> <%= image_tag('twitter-logo-no-bird.png', :alt => 'Bootstrap') %> </a></h3>
           <ul class="nav">
             <%= nav_item "Home", {:action => 'home'} %>
             <%= nav_item "Documentation", {:controller => 'doc'} %>
@@ -44,8 +44,15 @@
 
           <ul class="nav secondary-nav">
             <% if user_signed_in? %>
-                <li><%= link_to("#{current_user.name}(#{current_user.email})", edit_user_registration_path) %></li>
-                <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="#"><%= current_user.name %> <%= current_user.email %></a>
+                    <ul class="dropdown-menu">
+                        <li><%=link_to("Edit User Account", edit_user_registration_path) %></li>
+                        <li><a href="#">Edit User Profile</a></li>
+                        <li class="divider"></li>
+                        <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+                    </ul>
+                </li>
             <% else %>
                 <li><%= link_to('Login', new_user_session_path) %></li>
                 <li><%= link_to('Register', new_user_registration_path) %></li>
@@ -83,15 +90,25 @@
     <div id="footer">
       <div class="inner">
         <div class="container">
-          <p class="right"><a href="#">Back to top</a></p>
-          <p>
-            Designed and built with all the love in the world
-            <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by
-            <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.<br />
-            Put to good use by <a href="http://twitter.com/mkuhl" target="_blank">@mkuhl</a> for
-            <a href="http://twitter.com/softmachine_vie" target="_blank">@softmachine_vie</a>
-          </p>
-          <p> Still Licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. </p>
+          <div class="row">
+            <div class="span3 columns">
+                <p>Boostrap Demo</p>
+            </div>
+
+            <div class="span10 columns">
+              <p class="center">
+                <%=link_to("About", :action=> 'home') %>
+                <%=link_to("Terms of Service", :action=> 'home') %>
+                <%=link_to("Contact", :action=> 'home') %>
+              </p>
+            </div>
+
+            <div class="span3 columns">
+                <p>
+                <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>
+                </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
