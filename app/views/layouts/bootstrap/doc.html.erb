@@ -38,18 +38,17 @@
         <div class="container">
           <h3><%=  link_to "Bootstrap", root_path %></h3>
           <ul class="nav">
-            <%= nav_item "Overview", {:action => 'overview'} %>
-            <!--<li class="active"><%= link_to "Overview", :action => "overview" %></li>-->
-            <%= nav_item "About", {:action => 'about'} %>
-            <%= nav_item "Grid", {:action => 'grid'} %>
-            <%= nav_item "Layouts", {:action => 'layouts'} %>
-            <%= nav_item "Typography", {:action => 'typo'} %>
-            <%= nav_item "Tables", {:action => 'tables'} %>
-            <%= nav_item "Forms", {:action => 'forms'} %>
-            <%= nav_item "Navigation", {:action => 'navigation'} %>
-            <%= nav_item "Alerts", {:action => 'alerts'} %>
-            <%= nav_item "Popovers", {:action => 'popovers'} %>
-            <%= nav_item "Less", {:action => 'less'} %>
+            <%= nav_item "Overview", {:controller => 'doc', :action => 'overview'} %>
+            <%= nav_item "About", {:controller => 'doc', :action => 'about'} %>
+            <%= nav_item "Grid", {:controller => 'doc', :action => 'grid'} %>
+            <%= nav_item "Layouts", {:controller => 'doc', :action => 'layouts'} %>
+            <%= nav_item "Typography", {:controller => 'doc', :action => 'typo'} %>
+            <%= nav_item "Tables", {:controller => 'doc', :action => 'tables'} %>
+            <%= nav_item "Forms", {:controller => 'doc', :action => 'forms'} %>
+            <%= nav_item "Navigation", {:controller => 'doc', :action => 'navigation'} %>
+            <%= nav_item "Alerts", {:controller => 'doc', :action => 'alerts'} %>
+            <%= nav_item "Popovers", {:controller => 'doc', :action => 'popovers'} %>
+            <%= nav_item "Less", {:controller => 'doc', :action => 'less'} %>
           </ul>
         </div>
       </div>

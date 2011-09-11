@@ -1,7 +1,18 @@
 Bootstrap::Application.routes.draw do
   devise_for :users
 
-  match 'demo/overview' => 'demo#overview'
+
+  match 'home/:action' => 'home#:action', :as => :home
+
+  match 'about' => 'page#show', :as => :about, :defaults => { :page => 'about' }
+  match 'contact' => 'page#show', :as => :contact, :defaults => { :page => 'contact' }
+  match 'pages/:page' => 'page#show', :as => :pages
+
+  #match 'doc/:action' => 'doc#:action', :as => :doc
+
+  root :to => 'home#index'
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -58,5 +69,5 @@ Bootstrap::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  match ':controller(/:action(/:id(.:format)))'
+  # match ':controller(/:action(/:id(.:format)))'
 end

@@ -34,12 +34,13 @@
     <div class="topbar">
       <div class="topbar-inner">
         <div class="container">
-          <h3><a href="<%= url_for(:action => "index")%>"> <%= image_tag('twitter-logo-no-bird.png', :alt => 'Bootstrap') %> </a></h3>
+          <h3><a href="<%= root_url%>"> <%= image_tag('twitter-logo-no-bird.png', :alt => 'Bootstrap') %> </a></h3>
           <ul class="nav">
-            <%= nav_item "Home", {:action => 'home'} %>
-            <%= nav_item "Documentation", {:controller => 'doc'} %>
-            <%= nav_item "Contact", {:action => 'notyet', :id => 'contact'} %>
-            <%= nav_item "About", {:action => 'notyet', :id => 'about'} %>
+            <%= nav_item "Home", root_path %>
+            <%#= nav_item "Documentation", {:controller => 'doc', :action => 'overview'} %>
+            <%= nav_item "Contact", pages_path('contact') %>
+            <!--<%= nav_item "About", pages_path('about')%>-->
+            <%= nav_item "About", about_path%>
           </ul>
 
           <ul class="nav secondary-nav">
@@ -97,9 +98,9 @@
 
             <div class="span10 columns">
               <p class="center">
-                <%=link_to("About", :action=> 'home') %>
-                <%=link_to("Terms of Service", :action=> 'home') %>
-                <%=link_to("Contact", :action=> 'home') %>
+                <%=link_to("About", pages_url('about')) %>
+                <%=link_to("Terms of Service", pages_url('terms')) %>
+                <%=link_to("Contact", pages_url('contact')) %>
               </p>
             </div>
 
