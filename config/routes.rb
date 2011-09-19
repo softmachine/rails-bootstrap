@@ -8,7 +8,7 @@ Bootstrap::Application.routes.draw do
   match 'contact' => 'page#show', :as => :contact, :defaults => { :page => 'contact' }
   match 'pages/:page' => 'page#show', :as => :pages
 
-  #match 'doc/:action' => 'doc#:action', :as => :doc
+  match 'doc/(:action)' => 'doc#', :as => :doc
 
   root :to => 'home#index'
 

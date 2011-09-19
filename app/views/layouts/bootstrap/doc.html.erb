@@ -36,7 +36,7 @@
     <div class="topbar">
       <div class="topbar-inner">
         <div class="container">
-          <h3><%=  link_to "Bootstrap", root_path %></h3>
+          <h3><a href="<%= root_url%>"> <%= image_tag('twitter-logo-no-bird.png', :alt => 'Bootstrap') %> </a></h3>
           <ul class="nav">
             <%= nav_item "Overview", {:controller => 'doc', :action => 'overview'} %>
             <%= nav_item "About", {:controller => 'doc', :action => 'about'} %>

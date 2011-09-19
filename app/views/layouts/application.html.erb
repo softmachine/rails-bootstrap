@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Bootstrap, from Twitter</title>
+    <title>Rails - Bootstrap</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -13,7 +13,7 @@
 
     <!-- Le styles -->
     <%= stylesheet_link_tag    "application" %>
-    <%= stylesheet_link_tag    "demo/demo" %>
+    <%= stylesheet_link_tag    "app/app" %>
 
     <!-- Le javascript -->
     <%= javascript_include_tag "application" %>
@@ -34,12 +34,11 @@
     <div class="topbar">
       <div class="topbar-inner">
         <div class="container">
-          <h3><a href="<%= root_url%>"> <%= image_tag('twitter-logo-no-bird.png', :alt => 'Bootstrap') %> </a></h3>
+          <h3><a href="<%= root_url%>"> <%= image_tag('bootstrap-logo.png', :alt => 'Bootstrap') %> </a></h3>
           <ul class="nav">
             <%= nav_item "Home", root_path %>
-            <%#= nav_item "Documentation", {:controller => 'doc', :action => 'overview'} %>
+            <%= nav_item "Documentation", doc_path() %>
             <%= nav_item "Contact", pages_path('contact') %>
-            <!--<%= nav_item "About", pages_path('about')%>-->
             <%= nav_item "About", about_path%>
           </ul>
 
@@ -93,7 +92,7 @@
         <div class="container">
           <div class="row">
             <div class="span3 columns">
-                <p>Boostrap Demo</p>
+                <p><a href="http://softmachine.github.com/rails-bootstrap">Fork me on Github</a></p>
             </div>
 
             <div class="span10 columns">
