@@ -19,10 +19,10 @@
     <%= javascript_include_tag "application" %>
 
     <!-- Le fav and touch icons -->
-    <!--<link rel="shortcut icon" href="images/favicon.ico">-->
-    <!--<link rel="apple-touch-icon" href="images/apple-touch-icon.png">-->
-    <!--<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">-->
-    <!--<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/ico/favicon.ico">
+    <link rel="apple-touch-icon" href="/assets/ico/bootstrap-apple-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/ico/bootstrap-apple-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/ico/bootstrap-apple-114x114.png">
 
     <%= csrf_meta_tags %>
   </head>
@@ -62,32 +62,19 @@
       </div>
     </div>
 
-    <!-- Masthead (blueprinty thing)
-    ================================================== -->
-    <div id="masthead">
-      <div class="inner">
-        <div class="container">
-          <h1>Bootstrap|ER</h1>
-          <!--<p class="lead">-->
-            <!--Bootstrap is a toolkit from Twitter designed to kickstart development of webapps and sites.<br />-->
-            <!--It includes base CSS and HTML for typography, forms, buttons, tables, grids, navigation, and more.<br />-->
-          <!--</p>-->
-          <!--<p><strong>Nerd alert:</strong> Bootstrap is <a href="#less" title="Read about using Bootstrap with Less">built with Less</a> and was designed to work out of the gate with modern browsers in mind.</p>-->
-        </div><!-- /container -->
-      </div>
+
+    <div id="main-content">
+        <% if content_for?(:no_container) %>
+            <%= yield (:no_container) %>
+        <% else %>
+          <div class="container">
+             <%= render :partial => 'shared/flash_msg' %>
+             <%= yield %>
+          </div>
+        <%end %>
     </div>
 
-    <% if content_for?(:no_container) %>
-        <%= yield (:no_container) %>
-    <% else %>
-      <div class="container">
-         <%= render :partial => 'shared/flash_msg' %>
-         <%= yield %>
-      </div><!-- /container -->
-    <%end %>
-
-
-    <div id="footer">
+    <footer id="footer">
       <div class="inner">
         <div class="container">
           <div class="row">
@@ -112,7 +99,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </footer>
 
     <div id="modal_1" class="modal hide fade">
       <div class="modal-header">
