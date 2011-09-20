@@ -3,11 +3,11 @@
   <h1>Using Bootstrap with Less <small>Supercharge your CSS with variables, mixins, and functions</small></h1>
 </div>
 <div class="row">
-  <div class="span4 columns">
+  <div class="span4">
     <p>Bootstrap was built with <a href="http://markdotto.com/bootstrap/">Preboot</a>, an open-source pack of mixins and variables to be used in conjunction with <a href="http://lesscss.org" target="_blank">Less</a>, a CSS preprocessor for faster and easier web development.</p>
     <p>Check out how we used Preboot in Bootstrap and how you can make use of it should you choose to run Less on your next project.</p>
   </div>
-  <div class="span12 columns">
+  <div class="span12">
     <h2>How to use it</h2>
     <p>Use this option to make full use of Bootstrap’s Less variables, mixins, and nesting in CSS via javascript in your browser.</p>
 <pre class="prettyprint linenums">
@@ -69,34 +69,13 @@
     font-weight: @weight;
     line-height: @lineHeight;
   }
-  .serif(@weight: normal, @size: 14px, @lineHeight: 20px) {
-    font-family: "Georgia", Times New Roman, Times, sans-serif;
-    font-size: @size;
-    font-weight: @weight;
-    line-height: @lineHeight;
-  }
-  .monospace(@weight: normal, @size: 12px, @lineHeight: 20px) {
-    font-family: "Monaco", Courier New, monospace;
-    font-size: @size;
-    font-weight: @weight;
-    line-height: @lineHeight;
-  }
+  ...
 }
 </pre>
 <h4>Gradients</h4>
 <pre class="prettyprint linenums">
 #gradient {
-  .horizontal (@startColor: #555, @endColor: #333) {
-    background-color: @endColor;
-    background-repeat: repeat-x;
-    background-image: -khtml-gradient(linear, left top, right top, from(@startColor), to(@endColor)); // Konqueror
-    background-image: -moz-linear-gradient(left, @startColor, @endColor); // FF 3.6+
-    background-image: -ms-linear-gradient(left, @startColor, @endColor); // IE10
-    background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, @startColor), color-stop(100%, @endColor)); // Safari 4+, Chrome 2+
-    background-image: -webkit-linear-gradient(left, @startColor, @endColor); // Safari 5.1+, Chrome 10+
-    background-image: -o-linear-gradient(left, @startColor, @endColor); // Opera 11.10
-    background-image: linear-gradient(left, @startColor, @endColor); // Le standard
-  }
+  ...
   .vertical (@startColor: #555, @endColor: #333) {
     background-color: @endColor;
     background-repeat: repeat-x;
@@ -108,16 +87,11 @@
     background-image: -o-linear-gradient(@startColor, @endColor); // Opera 11.10
     background-image: linear-gradient(@startColor, @endColor); // The standard
   }
-  .directional (@startColor: #555, @endColor: #333, @deg: 45deg) {
-    ...
-  }
-  .vertical-three-colors(@startColor: #00b3ee, @midColor: #7a43b6, @colorStop: 50%, @endColor: #c3325f) {
-    ...
-  }
+  ...
 }
 </pre>
 
-<h3>Operations and grid system</h3>
+<h3>Operations</h3>
 <p>Get fancy and perform some math to generate flexible and powerful mixins like the one below.</p>
 <pre class="prettyprint linenums">
 // Griditude
@@ -126,19 +100,59 @@
 @gridGutterWidth:   20px;
 @siteWidth:         (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
 
-// Grid System
-.container {
-  width: @siteWidth;
-  margin: 0 auto;
-  .clearfix();
-}
+// Make some columns
 .columns(@columnSpan: 1) {
   width: (@gridColumnWidth * @columnSpan) + (@gridGutterWidth * (@columnSpan - 1));
 }
-.offset(@columnOffset: 1) {
-  margin-left: (@gridColumnWidth * @columnOffset) + (@gridGutterWidth * (@columnOffset - 1)) + @extraSpace;
-}
 </pre>
+
+    <h2>Compiling Less</h2>
+    <p>After modifying the <code>.less</code> files in /lib/, you'll need to recompile them in order to regenerate the bootstrap-*.*.*.css and bootstrap-*.*.*.min.css files. If you're submitting a pull request to GitHub, you must always recompile.</p>
+    <h3>Ways to compile</h3>
+    <table class="zebra-striped">
+      <thead>
+        <tr>
+          <th style="width: 120px;">Method</th>
+          <th>Steps</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Node with makefile</td>
+          <td>
+            <p>Install the less command line compiler with npm by running the following command:</p>
+            <pre>$ npm install lessc</pre>
+            <p>Once installed just run <code>make</code> from the root of your bootstrap directory and you're all set.</p>
+            <p>Additionally, if you have <a href="https://github.com/mynyml/watchr">watchr</a> installed, you may run <code>make watch</code> to have bootstrap automatically rebuilt every time you edit a file in the bootstrap lib (this isn't required, just a convenience method).</p>
+          </td>
+        </tr>
+          <td>Javascript</td>
+          <td>
+            <p><a href="http://lesscss.org/">Download the latest Less.js</a> and include the path to it (and Bootstrap) in the <code>head</code>.</p>
+<pre class="prettyprint linenums">
+&lt;link rel="stylesheet/less" href="/path/to/bootstrap.less"&gt;
+&lt;script src="/path/to/less.js"&gt;&lt;/script&gt;
+</pre>
+            <p>To recompile the .less files, just save them and reload your page. Less.js compiles them and stores them in local storage.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>Command line</td>
+          <td>
+            <p>If you already have the less command line tool installed, simply run the following command:</p>
+              <pre>$ lessc ./lib/bootstrap.less > bootstrap.css</pre>
+            <p>Be sure to include <code>--compress</code> in that command if you're trying to save some bytes!</p>
+          </td>
+        </tr>
+        <tr>
+          <td>Less Mac app</td>
+          <td>
+            <p><a href="http://incident57.com/less/">The unofficial Mac app</a> watches directories of .less files and compiles the code to local files after every save of a watched .less file.</p>
+            <p>If you like, you can toggle preferences in the app for automatic minifying and which directory the compiled files end up in.</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 

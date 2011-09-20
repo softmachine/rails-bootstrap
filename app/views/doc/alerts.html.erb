@@ -4,12 +4,13 @@
   </div>
   <!-- Basic alert messages -->
   <div class="row">
-    <div class="span4 columns">
+    <div class="span4">
       <h2>Basic alerts</h2>
-      <p><code>div.alert-message</code></p>
+      <p><code>.alert-message</code></p>
       <p>One-line messages for highlighting the failure, possible failure, or success of an action. Particularly useful for forms.</p>
+      <p><a class="btn js-btn" href="./javascript.html#alerts">Get the javascript &raquo;</a></p>
     </div>
-    <div class="span12 columns">
+    <div class="span12">
       <div class="alert-message warning">
         <a class="close" href="#">&times;</a>
         <p><strong>Holy guacamole!</strong> Best check yo self, you’re not looking too good.</p>
@@ -26,16 +27,25 @@
         <a class="close" href="#">&times;</a>
         <p><strong>Heads up!</strong> This is an alert that needs your attention, but it’s not a huge priority just yet.</p>
       </div>
+
+      <h4>Example code</h4>
+<pre class="prettyprint linenums">
+&lt;div class="alert-message warning"&gt;
+  &lt;a class="close" href="#"&gt;&times;&lt;/a&gt;
+  &lt;p&gt;&lt;strong&gt;Holy guacamole!&lt;/strong&gt; Best check yo self, you’re not looking too good.&lt;/p&gt;
+&lt;/div&gt;
+</pre>
     </div>
   </div><!-- /row -->
   <!-- Block messages -->
   <div class="row">
-    <div class="span4 columns">
+    <div class="span4">
       <h2>Block messages</h2>
-      <p><code>div.alert-message.block-message</code></p>
+      <p><code>.alert-message.block-message</code></p>
       <p>For messages that require a bit of explanation, we have paragraph style alerts. These are perfect for bubbling up longer error messages, warning a user of a pending action, or just presenting information for more emphasis on the page.</p>
+      <p><a class="btn js-btn" href="./javascript.html#alerts">Get the javascript &raquo;</a></p>
     </div>
-    <div class="span12 columns">
+    <div class="span12">
       <div class="alert-message block-message warning">
         <a class="close" href="#">&times;</a>
         <p><strong>Holy guacamole! This is a warning!</strong> Best check yo self, you’re not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
@@ -45,7 +55,12 @@
       </div>
       <div class="alert-message block-message error">
         <a class="close" href="#">&times;</a>
-        <p><strong>Oh snap! You got an error!</strong> Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+        <p><strong>Oh snap! You got an error!</strong> Change this and that and try again.</p>
+        <ul>
+          <li>Duis mollis est non commodo luctus</li>
+          <li>Nisi erat porttitor ligula</li>
+          <li>Eget lacinia odio sem nec elit</li>
+        </ul>
         <div class="alert-actions">
           <a class="btn small" href="#">Take this action</a> <a class="btn small" href="#">Or do this</a>
         </div>
@@ -64,6 +79,17 @@
           <a class="btn small" href="#">Take this action</a> <a class="btn small" href="#">Or do this</a>
         </div>
       </div>
+
+      <h4>Example code</h4>
+<pre class="prettyprint linenums">
+&lt;div class="alert-message block-message warning"&gt;
+  &lt;a class="close" href="#"&gt;&times;&lt;/a&gt;
+  &lt;p&gt;&lt;strong&gt;Holy guacamole! This is a warning!&lt;/strong&gt; Best check yo self, you’re not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.&lt;/p&gt;
+  &lt;div class="alert-actions"&gt;
+    &lt;a class="btn small" href="#"&gt;Take this action&lt;/a&gt; &lt;a class="btn small" href="#"&gt;Or do this&lt;/a>
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
     </div>
   </div><!-- /row -->
 </section>

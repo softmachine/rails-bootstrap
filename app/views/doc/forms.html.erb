@@ -3,16 +3,16 @@
     <h1>Forms</h1>
   </div>
   <div class="row">
-    <div class="span4 columns">
+    <div class="span4">
       <h2>Default styles</h2>
       <p>All forms are given default styles to present them in a readable and scalable way. Styles are provided for text inputs, select lists, textareas, radio buttons and checkboxes, and buttons.</p>
     </div>
-    <div class="span12 columns">
+    <div class="span12">
       <form>
         <fieldset>
           <legend>Example form legend</legend>
           <div class="clearfix">
-            <label for="xlInput">X-Large Input</label>
+            <label for="xlInput">X-Large input</label>
             <div class="input">
               <input class="xlarge" id="xlInput" name="xlInput" size="30" type="text" />
             </div>
@@ -42,19 +42,37 @@
             </div>
           </div><!-- /clearfix -->
           <div class="clearfix">
-            <label>Uneditable Input</label>
+            <label for="multiSelect">Multiple select</label>
             <div class="input">
-              <span class="uneditable-input">Some Value Here</span>
+              <select class="medium" multiple="multiple" name="multiSelect" id="multiSelect">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
             </div>
           </div><!-- /clearfix -->
           <div class="clearfix">
-            <label for="disabledInput">Disabled Input</label>
+            <label>Uneditable input</label>
+            <div class="input">
+              <span class="uneditable-input">Some value here</span>
+            </div>
+          </div><!-- /clearfix -->
+          <div class="clearfix">
+            <label for="disabledInput">Disabled input</label>
             <div class="input">
               <input class="xlarge disabled" id="disabledInput" name="disabledInput" size="30" type="text" placeholder="Disabled input here… carry on." disabled />
             </div>
           </div><!-- /clearfix -->
+          <div class="clearfix">
+            <label for="disabledInput">Disabled textarea</label>
+            <div class="input">
+              <textarea class="xxlarge" name="textarea" id="textarea" rows="3" disabled></textarea>
+            </div>
+          </div><!-- /clearfix -->
           <div class="clearfix error">
-            <label for="xlInput2">X-Large Input</label>
+            <label for="xlInput2">X-Large input</label>
             <div class="input">
               <input class="xlarge error" id="xlInput2" name="xlInput2" size="30" type="text" />
               <span class="help-inline">Small snippet of help text</span>
@@ -64,7 +82,7 @@
         <fieldset>
           <legend>Example form legend</legend>
           <div class="clearfix">
-            <label for="prependedInput">Prepended Text</label>
+            <label for="prependedInput">Prepended text</label>
             <div class="input">
               <div class="input-prepend">
                 <span class="add-on">@</span>
@@ -73,7 +91,7 @@
             </div>
           </div><!-- /clearfix -->
           <div class="clearfix">
-            <label for="prependedInput2">Prepended Checkbox</label>
+            <label for="prependedInput2">Prepended checkbox</label>
             <div class="input">
               <div class="input-prepend">
                 <label class="add-on"><input type="checkbox" name="" id="" value="" /></label>
@@ -82,7 +100,7 @@
             </div>
           </div><!-- /clearfix -->
           <div class="clearfix">
-            <label for="appendedInput">Appended Checkbox</label>
+            <label for="appendedInput">Appended checkbox</label>
             <div class="input">
               <div class="input-append">
                 <input class="mini" id="appendedInput" name="appendedInput" size="16" type="text" />
@@ -91,7 +109,7 @@
             </div>
           </div><!-- /clearfix -->
           <div class="clearfix">
-            <label for="fileInput">File Input</label>
+            <label for="fileInput">File input</label>
             <div class="input">
               <input class="input-file" id="fileInput" name="fileInput" type="file" />
             </div>
@@ -100,7 +118,7 @@
         <fieldset>
           <legend>Example form legend</legend>
           <div class="clearfix">
-            <label id="optionsCheckboxes">List of Options</label>
+            <label id="optionsCheckboxes">List of options</label>
             <div class="input">
               <ul class="inputs-list">
                 <li>
@@ -134,7 +152,7 @@
             </div>
           </div><!-- /clearfix -->
           <div class="clearfix">
-            <label>Date Range</label>
+            <label>Date range</label>
             <div class="input">
               <div class="inline-inputs">
                 <input class="small" type="text" value="May 1, 2011" />
@@ -149,14 +167,14 @@
           <div class="clearfix">
             <label for="textarea">Textarea</label>
             <div class="input">
-              <textarea class="xxlarge" id="textarea" name="textarea"></textarea>
+              <textarea class="xxlarge" id="textarea2" name="textarea2" rows="3"></textarea>
               <span class="help-block">
                 Block of help text to describe the field above if need be.
               </span>
             </div>
           </div><!-- /clearfix -->
           <div class="clearfix">
-            <label id="optionsRadio">List of Options</label>
+            <label id="optionsRadio">List of options</label>
             <div class="input">
               <ul class="inputs-list">
                 <li>
@@ -175,7 +193,7 @@
             </div>
           </div><!-- /clearfix -->
           <div class="actions">
-            <input type="submit" class="btn primary" value="Save Changes">&nbsp;<button type="reset" class="btn">Cancel</button>
+            <input type="submit" class="btn primary" value="Save changes">&nbsp;<button type="reset" class="btn">Cancel</button>
           </div>
         </fieldset>
       </form>
@@ -185,16 +203,16 @@
   <br />
 
   <div class="row">
-    <div class="span4 columns">
+    <div class="span4">
       <h2>Stacked forms</h2>
       <p>Add <code>.form-stacked</code> to your form’s HTML and you’ll have labels on top of their fields instead of to their left. This works great if your forms are short or you have two columns of inputs for heavier forms.</p>
     </div>
-    <div class="span12 columns">
+    <div class="span12">
       <form action="" class="form-stacked">
         <fieldset>
           <legend>Example form legend</legend>
           <div class="clearfix">
-            <label for="xlInput3">X-Large Input</label>
+            <label for="xlInput3">X-Large input</label>
             <div class="input">
               <input class="xlarge" id="xlInput3" name="xlInput3" size="30" type="text" />
             </div>
@@ -215,14 +233,14 @@
         <fieldset>
           <legend>Example form legend</legend>
           <div class="clearfix error">
-            <label for="xlInput4">X-Large Input</label>
+            <label for="xlInput4">X-Large input</label>
             <div class="input">
               <input class="xlarge error" id="xlInput4" name="xlInput4" size="30" type="text" />
               <span class="help-inline">Small snippet of help text</span>
             </div>
           </div><!-- /clearfix -->
           <div class="clearfix">
-            <label id="optionsCheckboxes">List of Options</label>
+            <label id="optionsCheckboxes">List of options</label>
             <div class="input">
               <ul class="inputs-list">
                 <li>
@@ -245,19 +263,42 @@
           </div><!-- /clearfix -->
         </fieldset>
         <div class="actions">
-          <button type="submit" class="btn primary">Save Changes</button>&nbsp;<button type="reset" class="btn">Cancel</button>
+          <button type="submit" class="btn primary">Save changes</button>&nbsp;<button type="reset" class="btn">Cancel</button>
         </div>
       </form>
     </div>
   </div><!-- /row -->
 
   <div class="row">
-    <div class="span4 columns">
+    <div class="span4">
+      <h2>Form field sizes</h2>
+      <p>Customize any form <code>input</code>, <code>select</code>, or <code>textarea</code> width by adding just a few classes to your markup.</p>
+      <p>As of v1.3.0, we have added the grid-based sizing classes for form elements. <strong>Please use the these over the existing <code>.mini</code>, <code>.small</code>, etc classes.</strong></p>
+    </div>
+    <div class="span12">
+      <form action="">
+        <div class="clearfix"><input class="span2" id="" name="" type="text" placeholder=".span2" /></div>
+        <div class="clearfix"><input class="span3" id="" name="" type="text" placeholder=".span3" /></div>
+        <div class="clearfix"><input class="span4" id="" name="" type="text" placeholder=".span4" /></div>
+        <div class="clearfix"><input class="span5" id="" name="" type="text" placeholder=".span5" /></div>
+        <div class="clearfix"><input class="span6" id="" name="" type="text" placeholder=".span6" /></div>
+        <div class="clearfix"><input class="span7" id="" name="" type="text" placeholder=".span7" /></div>
+        <div class="clearfix"><input class="span8" id="" name="" type="text" placeholder=".span8" /></div>
+        <div class="clearfix"><input class="span9" id="" name="" type="text" placeholder=".span9" /></div>
+        <div class="clearfix"><input class="span10" id="" name="" type="text" placeholder=".span10" /></div>
+        <div class="clearfix"><input class="span11" id="" name="" type="text" placeholder=".span11" /></div>
+        <div class="clearfix"><input class="span12" id="" name="" type="text" placeholder=".span12" /></div>
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span4">
       <h2>Buttons</h2>
       <p>As a convention, buttons are used for actions while links are used for objects. For instance, "Download" could be a button and "recent activity" could be a link.</p>
-      <p>All buttons default to a light gray style, but a number of functional classes can be applied for different color styles. These classes include a blue <code>.primary</code> class, a light-blue <code>.info</code> class, a green <code>.success</code> class, and a red <code>.danger</code> class. Plus, rolling your own styles is easy peasy.</p>
+      <p>All buttons default to a light gray style, but a number of functional classes can be applied for different color styles. These classes include a blue <code>.primary</code> class, a light-blue <code>.info</code> class, a green <code>.success</code> class, and a red <code>.danger</code> class.</p>
     </div>
-    <div class="span12 columns">
+    <div class="span12">
       <h3>Example buttons</h3>
       <p>Button styles can be applied to anything with the <code>.btn</code> applied. Typically you’ll want to apply these to only <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code>, and select <code>&lt;input&gt;</code> elements. Here’s how it looks:</p>
       <div class="well" style="padding: 14px 19px;">

@@ -25,6 +25,9 @@ class DocController < ApplicationController
   def typo
   end
 
+  def media
+  end
+
   def tables
   end
 
@@ -38,6 +41,9 @@ class DocController < ApplicationController
   end
 
   def popovers
+  end
+
+  def javascript
   end
 
   def less

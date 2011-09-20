@@ -13,18 +13,19 @@
 
     <!-- Le styles -->
     <%= stylesheet_link_tag    "application" %>
-    <%= stylesheet_link_tag    "bootstrap-doc/doc" %>
+    <%= stylesheet_link_tag    "bootstrap-doc/docs" %>
 
     <!-- Le javascript -->
     <%= javascript_include_tag "application" %>
-    <%= javascript_include_tag "bootstrap-doc/doc" %>
+    <%= javascript_include_tag "bootstrap-doc/bootstrap-doc" %>
 
 
     <!-- Le fav and touch icons -->
-    <!--<link rel="shortcut icon" href="images/favicon.ico">-->
-    <!--<link rel="apple-touch-icon" href="images/apple-touch-icon.png">-->
-    <!--<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">-->
-    <!--<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">-->
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/ico/favicon.ico">
+    <link rel="apple-touch-icon" href="/assets/ico/bootstrap-apple-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/ico/bootstrap-apple-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/ico/bootstrap-apple-114x114.png">
+
 
     <%= csrf_meta_tags %>
   </head>
@@ -36,18 +37,20 @@
     <div class="topbar">
       <div class="topbar-inner">
         <div class="container">
-          <h3><a href="<%= root_url%>"> <%= image_tag('twitter-logo-no-bird.png', :alt => 'Bootstrap') %> </a></h3>
+          <a class="brand" href="<%= root_url%>"> <%= image_tag('twitter-logo-no-bird.png', :alt => 'Bootstrap') %> </a>
           <ul class="nav">
             <%= nav_item "Overview", {:controller => 'doc', :action => 'overview'} %>
             <%= nav_item "About", {:controller => 'doc', :action => 'about'} %>
             <%= nav_item "Grid", {:controller => 'doc', :action => 'grid'} %>
             <%= nav_item "Layouts", {:controller => 'doc', :action => 'layouts'} %>
-            <%= nav_item "Typography", {:controller => 'doc', :action => 'typo'} %>
+            <%= nav_item "Type", {:controller => 'doc', :action => 'typo'} %>
+            <%= nav_item "Media", {:controller => 'doc', :action => 'media'} %>
             <%= nav_item "Tables", {:controller => 'doc', :action => 'tables'} %>
             <%= nav_item "Forms", {:controller => 'doc', :action => 'forms'} %>
             <%= nav_item "Navigation", {:controller => 'doc', :action => 'navigation'} %>
             <%= nav_item "Alerts", {:controller => 'doc', :action => 'alerts'} %>
             <%= nav_item "Popovers", {:controller => 'doc', :action => 'popovers'} %>
+            <%= nav_item "Javascript", {:controller => 'doc', :action => 'javascript'} %>
             <%= nav_item "Less", {:controller => 'doc', :action => 'less'} %>
           </ul>
         </div>
@@ -56,7 +59,7 @@
 
     <!-- Masthead (blueprinty thing)
     ================================================== -->
-    <div id="masthead">
+    <header class="jumbotron masthead" id="overview">
       <div class="inner">
         <div class="container">
           <h1>Bootstrap, from Twitter</h1>
@@ -67,7 +70,7 @@
           <p><strong>Nerd alert:</strong> Bootstrap is <a href="#less" title="Read about using Bootstrap with Less">built with Less</a> and was designed to work out of the gate with modern browsers in mind.</p>
         </div><!-- /container -->
       </div>
-    </div>
+    </header>
 
     <% if content_for?(:no_container) %>
         <%= yield (:no_container) %>
@@ -78,17 +81,15 @@
     <%end %>
 
 
-    <div id="footer">
-      <div class="inner">
-        <div class="container">
-          <p class="right"><a href="#">Back to top</a></p>
-          <p>
-            Designed and built with all the love in the world <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.<br />
-            Licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>.
-          </p>
-        </div>
+    <footer class="footer">
+      <div class="container">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>
+          Designed and built with all the love in the world <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.<br />
+          Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+        </p>
       </div>
-    </div>
+    </footer>
 
   </body>
 </html>
