@@ -20,10 +20,14 @@ gem 'tilt', :git => 'git://github.com/thisduck/tilt.git'
 gem 'less-js'
 gem 'devise'
 
+
+
 group :development do
   gem 'sqlite3'
   gem 'rspec-rails', '2.6.1'
   #gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
+  gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 group :production do
@@ -44,4 +48,6 @@ group :test do
   # Pretty printed test output
   gem 'sqlite3'
   gem 'turn', :require => false
+  gem 'factory_girl_rails'
+  gem 'faker'
 end
