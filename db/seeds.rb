@@ -27,7 +27,6 @@ require 'factory_girl'
 
 public
 def make_user(user)
-  user.save rescue ActionView::Template::Error
   user.save
   user.confirm!
   puts "created user #{user.name} (#{user.email})"
