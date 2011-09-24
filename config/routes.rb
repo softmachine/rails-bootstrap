@@ -1,5 +1,6 @@
 Bootstrap::Application.routes.draw do
   devise_for :users
+  resources :users, :only => :show
 
 
   match 'home/:action' => 'home#:action', :as => :home
@@ -11,8 +12,6 @@ Bootstrap::Application.routes.draw do
   match 'doc/(:action)' => 'doc#', :as => :doc
 
   root :to => 'home#index'
-
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -63,7 +62,6 @@ Bootstrap::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'home#home'
 
   # See how all your routes lay out with "rake routes"
 
