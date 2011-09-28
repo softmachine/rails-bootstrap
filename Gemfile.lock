@@ -155,6 +155,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   jquery-rails
+  less
   less-rails
   less-rails-bootstrap (~> 1.3.0)
   pg

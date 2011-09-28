@@ -14,7 +14,7 @@ Bootstrap::Application.configure do
   config.action_controller.perform_caching = false
 
   ### ActionMailer Config
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'railsvm' }
   # A dummy setup for development - no deliveries, but logged
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = false
@@ -36,4 +36,17 @@ Bootstrap::Application.configure do
 
   # needed for devise 'confirmable'
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  config.log_level = :info
+
+  # rdebug hook for use with passenger
+  #   => almost works, but not quite
+  #if File.exists?(File.join('tmp', 'debug.txt'))
+  #  require 'ruby-debug-ide'
+  #  puts "XXXX"
+  #  Debugger.start_server("0.0.0.0", 7000) # 7000 being a port
+  #  File.delete(File.join('tmp', 'debug.txt'))
+  #end
+  #
+
 end
