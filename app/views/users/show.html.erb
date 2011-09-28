@@ -5,12 +5,31 @@
     <div class="row">
       <div class="span8 offset4">
         <div class="attrlist">
-          <div class="clearfix">
-            <div class="label">Name:</div> <div class="value"><%= @user.name %></div>
+          <div class="record">
+            <div class="title">Name:</div> <div class="value"><%= @user.name %></div>
           </div>
-          <div class="clearfix">
-            <div class="label">EMail Address:</div> <div class="value"><%= @user.email %></div>
+
+          <div class="record">
+            <div class="title">EMail Address:</div> <div class="value"><%= @user.email %></div>
           </div>
+
+          <div class="record">
+            <div class="title">Created at</div><div class="value"><%= @user.created_at %></div>
+          </div>
+
+          <div class="record">
+            <div class="title">Confirmed at</div><div class="value"><%= @user.confirmed_at %></div>
+          </div>
+
+          <div class="record">
+            <div class="title">Last Login</div><div class="value"><%= @user.last_sign_in_at %></div>
+          </div>
+
+          <div class="record">
+            <div class="title">Last IP Address</div><div class="value"><%= @user.last_sign_in_ip %></div>
+          </div>
+
+
         </div>
 
       </div>

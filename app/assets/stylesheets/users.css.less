@@ -1,29 +1,34 @@
+@import "twitter/bootstrap/variables";
+@import "twitter/bootstrap/mixins";
 
 
-//div.attrlist {
-//  margin-bottom: @baseline;
-//  padding-top: @baseline;
-//
-//  .clearfix {
-//    margin-bottom: @baseline;
-//    .clearfix()
-//  }
-//
-//  div.label {
-//    padding-top: 6px;
-//    font-size: @basefont;
-//    line-height: @baseline;
-//    float: left;
-//    width: 130px;
-//    text-align: right;
-//    color: @grayDark;
-//  }
-//
-//  div.value {
-//    margin-left: 150px;
-//  }
-//
-//
-//}
+div.attrlist {
+  padding-top: @baseline;
+  margin-bottom: @baseline;
+
+  div.record {
+    margin-bottom: @baseline/2;
+      .clearfix();
+
+      div.title {
+        /*padding-top: 6px;*/
+        font-size: @basefont;
+        line-height: @baseline;
+        float: left;
+        width: 130px;
+        text-align: right;
+
+        background-color:@white;
+        color: @gray;
+      }
+
+      div.value {
+        margin-left: 150px;
+        color:@gray;
+      }
+  }
+
+}
+
 
 
