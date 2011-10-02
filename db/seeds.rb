@@ -42,9 +42,9 @@ make_user(Factory.build :user, :name => 'mike', :email => 'meb@kuhl.at')
 make_user(Factory.build :user, :name => 'admin', :email => 'mkuhl@softmachine.at')
 
 # create posts
-10.times do
-  post = Factory.build :blog_post
-  post.save
-  puts "created post #{post.title}"
-end
+#10.times do
+#  post = Factory.build :blog_post
+#  post.save
+#  puts "created post #{post.title}"
+#end
 

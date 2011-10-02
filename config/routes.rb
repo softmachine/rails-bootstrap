@@ -1,7 +1,5 @@
 Bootstrap::Application.routes.draw do
   devise_for :users
-  resources :users, :only => :show
-
 
   match 'home/:action' => 'home#:action', :as => :home
 
