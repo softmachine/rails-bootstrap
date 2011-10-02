@@ -4,4 +4,4 @@ log/*.log
 tmp/
 .sass-cache/
 .idea/
-vendor/plugins/Rename/
+.rails_footnotes
