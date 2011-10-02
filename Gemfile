@@ -32,6 +32,7 @@ group :development do
   #gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
   gem 'factory_girl_rails'
   gem 'faker'
+  gem 'rails-footnotes'
 end
 
 group :production do

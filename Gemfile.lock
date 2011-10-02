@@ -98,6 +98,8 @@ GEM
       activesupport (= 3.1.0)
       bundler (~> 1.0)
       railties (= 3.1.0)
+    rails-footnotes (3.7.5)
+      rails (>= 3.0.0)
     railties (3.1.0)
       actionpack (= 3.1.0)
       activesupport (= 3.1.0)
@@ -163,6 +165,7 @@ DEPENDENCIES
   less-rails-bootstrap (~> 1.3.0)
   pg
   rails (= 3.1.0)
+  rails-footnotes
   rspec-rails (= 2.6.1)
   sass-rails (~> 3.1.0)
   sqlite3
