@@ -24,6 +24,7 @@ end
 gem 'tilt'
 gem 'jquery-rails'
 gem 'devise'
+gem 'twitter_bootstrap_form_for', :git =>  'git://github.com/softmachine/twitter_bootstrap_form_for.git'
 
 
 group :development do

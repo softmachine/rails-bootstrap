@@ -11,49 +11,30 @@
     </div>
 
     <div class="span12 columns">
-      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-        <%= devise_error_messages! %>
-        <fieldset>
-          <!--<legend>User fields</legend>-->
 
-          <!-- name -->
-          <div class="clearfix">
-            <%= f.label :name %>
-            <div class="input">
-                <%= f.text_field :name, :class=> "xlarge" %>
-            </div>
-          </div><!-- /clearfix -->
+      <%= twitter_bootstrap_form_for resource, :as => resource_name, :url => registration_path(resource_name) do |f|  %>
 
-          <!-- email -->
-          <div class="clearfix">
-            <%= f.label :email %>
-            <div class="input">
-                <%= f.email_field :email, :class=> "xlarge" %>
-            </div>
-          </div><!-- /clearfix -->
+          <%= devise_error_messages! %>
 
-          <!-- password -->
-          <div class="clearfix">
-            <%= f.label :password %>
-            <div class="input">
-              <%= f.password_field :password, :class => "xlarge" %>
-            </div>
-          </div><!-- /clearfix -->
+          <%= f.inputs do %>
+            <%= f.text_field :name, :placeholder => 'mynickname'%>
+            <%= f.email_field :email, :placeholder => 'me@example.com', :class => "large" %>
+            <%= f.password_field :password do %>
+                  <span class="help-block">Must be at least 6 characters</span>
+            <% end %>
+            <%= f.password_field :password_confirmation, 'Confirm Password' %>
 
-          <!-- password confirmation-->
-          <div class="clearfix">
-            <%= f.label :password_confirmation %>
-            <div class="input">
-              <%= f.password_field :password_confirmation, :class => "xlarge" %>
-            </div>
-          </div><!-- /clearfix -->
+            <%= f.actions do %>
+                <%= f.submit 'Sign up'%>
+                <%= button_tag  'Cancel', :type => 'reset', :class => 'btn'%>
+            <% end %>
 
-          <div class="actions">
-            <input type="submit" value="Sign Up !" class="btn primary">&nbsp;
-            <button class="btn" type="reset">Cancel</button>
-          </div>
-        </fieldset>
+
+          <% end %>
+
       <% end %>
+
+
       <%= render :partial => "devise/shared/links" %>
     </div>
 

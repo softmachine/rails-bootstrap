@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/softmachine/twitter_bootstrap_form_for.git
+  revision: dbd5906d5b7cbef67cb9a5f1cfb0f124aa024f96
+  specs:
+    twitter_bootstrap_form_for (1.0.2)
+      actionpack (~> 3)
+      railties (~> 3)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -170,4 +178,5 @@ DEPENDENCIES
   sqlite3
   tilt
   turn
+  twitter_bootstrap_form_for!
   uglifier

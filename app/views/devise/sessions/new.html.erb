@@ -11,43 +11,24 @@
     </div>
 
     <div class="span12 columns">
-      <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-        <fieldset>
-          <!--<legend>User fields</legend>-->
-          <!-- email -->
-          <div class="clearfix">
-            <%= f.label :email %>
-            <div class="input">
-                <%= f.email_field :email, :class=> "xlarge" %>
-            </div>
-          </div><!-- /clearfix -->
+      <%= twitter_bootstrap_form_for resource, :as => resource_name, :url => session_path(resource_name) do |f|  %>
 
-          <!-- password -->
-          <div class="clearfix">
-            <%= f.label :password %>
-            <div class="input">
+        <%= f.inputs do %>
+              <%= f.email_field :email, :placeholder => 'me@example.com', :class => "xlarge" %>
               <%= f.password_field :password, :class => "xlarge" %>
-            </div>
-          </div><!-- /clearfix -->
+              <%= f.toggles do %>
+                <%= f.check_box :remember_me, 'Remember Me' %>
+              <% end %>
 
-          <!-- remember me -->
-          <div class="clearfix">
-            <%= f.label :remember_me %>
-            <div class="input">
-              <ul class="inputs-list">
-                <li><%= f.check_box :remember_me %></li>
-              </ul>
-            </div>
-          </div><!-- /clearfix -->
-
-          <div class="actions">
-            <input type="submit" value="Login" class="btn primary">&nbsp;<button class="btn" type="reset">Cancel</button>
-          </div>
-        </fieldset>
+              <%= f.actions do %>
+                  <%= f.submit 'Log In'%>
+                  <%= button_tag  'Cancel', :type => 'reset', :class => 'btn'%>
+              <% end %>
+        <% end %>
       <% end %>
+
       <%= render :partial => "devise/shared/links" %>
     </div>
-
 
   </div><!-- /row -->
 

@@ -10,58 +10,23 @@
     </div>
 
     <div class="span12 columns">
-      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-        <%= devise_error_messages! %>
-        <fieldset>
-          <!--<legend>User fields</legend>-->
+        <%= twitter_bootstrap_form_for resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }  do |f|  %>
+              <%= devise_error_messages! %>
+              <%= f.inputs do %>
+                <%= f.text_field :name, :placeholder => 'mynickname'%>
+                <%= f.email_field :email, :placeholder => 'me@example.com', :class => "large" %>
+                <%= f.password_field :password %>
+                <%= f.password_field :password_confirmation, 'Confirm Password' %>
+                <%= f.password_field :current_password , 'Current Password' do %>
+                    <span class="help-block"><strong>Note:</strong> we need your current password to confirm your changes.</span>
+                <% end %>
 
-          <!-- name -->
-          <div class="clearfix">
-            <%= f.label :name %>
-            <div class="input">
-                <%= f.text_field :name, :class=> "xlarge" %>
-            </div>
-          </div><!-- /clearfix -->
-
-          <!-- email -->
-          <div class="clearfix">
-            <%= f.label :email %>
-            <div class="input">
-                <%= f.email_field :email, :class=> "xlarge" %>
-            </div>
-          </div><!-- /clearfix -->
-
-          <!-- password -->
-          <div class="clearfix">
-            <%= f.label :password %>
-            <div class="input">
-              <%= f.password_field :password, :class => "xlarge" %>
-            </div>
-          </div><!-- /clearfix -->
-
-          <!-- password confirmation-->
-          <div class="clearfix">
-            <%= f.label :password_confirmation %>
-            <div class="input">
-              <%= f.password_field :password_confirmation, :class => "xlarge" %>
-            </div>
-          </div><!-- /clearfix -->
-
-          <!-- current password -->
-          <div class="clearfix">
-            <%= f.label :current_password  %>
-            <div class="input">
-              <%= f.password_field :current_password , :class => "xlarge" %>
-              <span class="help-block"><strong>Note:</strong> we need your current password to confirm your changes.</span>
-            </div>
-          </div><!-- /clearfix -->
-
-          <div class="actions">
-            <input type="submit" value="Update" class="btn primary">&nbsp;
-            <!--<button class="btn" type="reset">Cancel</button>-->
-          </div>
-        </fieldset>
+                <%= f.actions do %>
+                  <%= f.submit 'Update'%>
+                <% end %>
+              <% end %>
       <% end %>
+
       <%= render :partial => "devise/shared/links" %>
     </div>
 
