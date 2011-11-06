@@ -8,7 +8,7 @@
     <div class="span4">
       <h2>Headings &amp; copy</h2>
       <p>A standard typographic hierarchy for structuring your webpages.</p>
-      <p>The entire typographic grid is based on two Less variables in our preboot.less file: <code>@basefont</code> and <code>@baseline</code>. The first is the base font-size used throughout and the second is the base line-height.</p>
+      <p>The entire typographic grid is based on two Less variables in our variables.less file: <code>@basefont</code> and <code>@baseline</code>. The first is the base font-size used throughout and the second is the base line-height.</p>
       <p>We use those variables, and some math, to create the margins, paddings, and line-heights of all our type and more.</p>
     </div>
     <div class="span4">
@@ -179,7 +179,7 @@
     <div class="span12">
       <h3>Presenting code</h3>
       <p>Code, blocks of or just snippets inline, can be displayed with style just by wrapping in the right tag. For blocks of code spanning multiple lines, use the <code>&lt;pre&gt;</code> element. For inline code, use the <code>&lt;code&gt;</code> element.</p>
-      <table class="zebra-striped">
+      <table class="bordered-table zebra-striped">
         <thead>
           <tr>
             <th style="width: 190px;">Element</th>
@@ -189,7 +189,7 @@
         <tbody>
           <tr>
             <td><code>&lt;code&gt;</code></td>
-            <td>In a line of text like this, your wrapped code will look like this <code>&gt;html&lt;</code> element.</td>
+            <td>In a line of text like this, your wrapped code will look like this <code>&lt;html&gt;</code> element.</td>
           </tr>
           <tr>
             <td><code>&lt;pre&gt;</code></td>
@@ -198,13 +198,13 @@
   &lt;h1&gt;Heading&lt;/h1&gt;
   &lt;p&gt;Something right here...&lt;/p&gt;
 &lt;/div&gt;</pre>
-              <p><strong>Note:</strong> Be sure to keep code within <code>pre</code> tags as close to the left as possible; it will render all tabs.</p>
+              <p><strong>Note:</strong> Be sure to keep code within <code>&lt;pre&gt;</code> tags as close to the left as possible; it will render all tabs.</p>
             </td>
           </tr>
           <tr>
             <td><code>&lt;pre class="prettyprint"&gt;</code></td>
             <td>
-              <p>Using the google-code-prettify library, you're blocks of code get a slightly different visual style and automatic syntax highlighting.</p>
+              <p>Using the google-code-prettify library, your blocks of code get a slightly different visual style and automatic syntax highlighting.</p>
 <pre class="prettyprint">&lt;div&gt;
   &lt;h1&gt;Heading&lt;/h1&gt;
   &lt;p&gt;Something right here...&lt;/p&gt;
@@ -229,7 +229,7 @@
     <div class="span12">
       <h3>Label anything</h3>
       <p>Ever needed one of those fancy <span class="label success">New!</span> or <span class="label important">Important</span> flags when writing code? Well, now you have them. Here's what's included by default:</p>
-      <table class="zebra-striped">
+      <table class="bordered-table zebra-striped">
         <thead>
           <tr>
             <th style="width: 50%;">Label</th>

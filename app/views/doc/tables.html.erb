@@ -57,9 +57,78 @@
 &lt;table&gt;
   ...
 &lt;/table&gt;</pre>
+      <h3>Example: Condensed table</h3>
+      <p>For tables that require more data in tighter spaces, use the condensed flavor that cuts padding in half. It can also be used in conjunction with borders and zebra-stripes, just like the default table styles.</p>
+      <table class="condensed-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Language</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>1</th>
+            <td>Some</td>
+            <td>One</td>
+            <td>English</td>
+          </tr>
+          <tr>
+            <th>2</th>
+            <td>Joe</td>
+            <td>Sixpack</td>
+            <td>English</td>
+          </tr>
+          <tr>
+            <th>3</th>
+            <td>Stu</td>
+            <td>Dent</td>
+            <td>Code</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Example: Bordered table</h3>
+      <p>Make your tables look just a wee bit sleeker by rounding their corners and adding borders on all sides.</p>
+      <table class="bordered-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Language</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>1</th>
+            <td>Some</td>
+            <td>One</td>
+            <td>English</td>
+          </tr>
+          <tr>
+            <th>2</th>
+            <td>Joe</td>
+            <td>Sixpack</td>
+            <td>English</td>
+          </tr>
+          <tr>
+            <th>3</th>
+            <td>Stu</td>
+            <td>Dent</td>
+            <td>Code</td>
+          </tr>
+        </tbody>
+      </table>
+<pre class="prettyprint linenums">
+&lt;table class="bordered-table"&gt;
+  ...
+&lt;/table&gt;</pre>
       <h3>Example: Zebra-striped</h3>
       <p>Get a little fancy with your tables by adding zebra-striping&mdash;just add the <code>.zebra-striped</code> class.</p>
-      <table class="zebra-striped">
+      <table class="bordered-table zebra-striped">
         <thead>
           <tr>
             <th>#</th>
@@ -87,12 +156,25 @@
             <td>Dent</td>
             <td>Code</td>
           </tr>
+          <tr>
+            <td colspan="4">
+              span 4 columns
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              span 2 columns
+            </td>
+            <td colspan="2">
+              span 2 columns
+            </td>
+          </tr>
         </tbody>
       </table>
       <p><strong>Note:</strong> Zebra-striping is a progressive enhancement not available for older browsers like IE8 and below.</p>
 <pre class="prettyprint linenums">
 &lt;table class="zebra-striped"&gt;
-...
+  ...
 &lt;/table&gt;</pre>
       <h3>Example: Zebra-striped w/ TableSorter.js</h3>
       <p>Taking the previous example, we improve the usefulness of our tables by providing sorting functionality via <a href="http://jquery.com">jQuery</a> and the <a href="http://tablesorter.com/docs/">Tablesorter</a> plugin. <strong>Click any column’s header to change the sort.</strong></p>

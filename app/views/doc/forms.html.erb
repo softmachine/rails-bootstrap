@@ -44,7 +44,7 @@
           <div class="clearfix">
             <label for="multiSelect">Multiple select</label>
             <div class="input">
-              <select class="medium" multiple="multiple" name="multiSelect" id="multiSelect">
+              <select class="medium" size="5" multiple="multiple" name="multiSelect" id="multiSelect">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -72,10 +72,24 @@
             </div>
           </div><!-- /clearfix -->
           <div class="clearfix error">
-            <label for="xlInput2">X-Large input</label>
+            <label for="errorInput">Input with error</label>
             <div class="input">
-              <input class="xlarge error" id="xlInput2" name="xlInput2" size="30" type="text" />
+              <input class="xlarge error" id="errorInput" name="errorInput" size="30" type="text" />
               <span class="help-inline">Small snippet of help text</span>
+            </div>
+          </div><!-- /clearfix -->
+          <div class="clearfix success">
+            <label for="successInput">Input with success</label>
+            <div class="input">
+              <input class="xlarge error" id="successInput" name="successInput" size="30" type="text" />
+              <span class="help-inline">Success!</span>
+            </div>
+          </div><!-- /clearfix -->
+          <div class="clearfix warning">
+            <label for="warningInput">Input with warning</label>
+            <div class="input">
+              <input class="xlarge error" id="warningInput" name="warningInput" size="30" type="text" />
+              <span class="help-inline">Ruh roh!</span>
             </div>
           </div><!-- /clearfix -->
         </fieldset>
@@ -88,6 +102,7 @@
                 <span class="add-on">@</span>
                 <input class="medium" id="prependedInput" name="prependedInput" size="16" type="text" />
               </div>
+              <span class="help-block">Here's some help text</span>
             </div>
           </div><!-- /clearfix -->
           <div class="clearfix">
@@ -136,7 +151,7 @@
                 <li>
                   <label>
                     <input type="checkbox" name="optionsCheckboxes" value="option2" />
-                    <span>Option three can&mdash;yes, you guessed it&mdash;also be checked and included in form results</span>
+                    <span>Option three can&mdash;yes, you guessed it&mdash;also be checked and included in form results. Let's make it super long so that everyone can see how it wraps, too.</span>
                   </label>
                 </li>
                 <li>
@@ -160,7 +175,7 @@
                 to
                 <input class="small" type="text" value="May 8, 2011" />
                 <input class="mini" type="text" value="11:59pm" />
-                <span class="help-inline">All times are shown as Pacific Standard Time (GMT -08:00).</span>
+                <span class="help-block">All times are shown as Pacific Standard Time (GMT -08:00).</span>
               </div>
             </div>
           </div><!-- /clearfix -->

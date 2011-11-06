@@ -18,7 +18,7 @@ end
 
 platform :ruby do
   gem 'less-rails'
-  gem 'less-rails-bootstrap', '~> 1.3.0'
+  #gem 'less-rails-bootstrap', '~> 1.3.0'
 end
 
 gem 'tilt'

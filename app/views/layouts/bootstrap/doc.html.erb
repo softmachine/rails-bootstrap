@@ -15,11 +15,6 @@
     <%= stylesheet_link_tag    "application" %>
     <%= stylesheet_link_tag    "bootstrap-doc/docs" %>
 
-    <!-- Le javascript -->
-    <%= javascript_include_tag "application" %>
-    <%= javascript_include_tag "bootstrap-doc/bootstrap-doc" %>
-
-
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" type="image/x-icon" href="/assets/ico/favicon.ico">
     <link rel="apple-touch-icon" href="/assets/ico/bootstrap-apple-57x57.png">
@@ -37,7 +32,7 @@
     <div class="topbar">
       <div class="topbar-inner">
         <div class="container">
-          <a class="brand" href="<%= root_url%>"> <%= image_tag('twitter-logo-no-bird.png', :alt => 'Bootstrap') %> </a>
+          <a class="brand" href="<%= root_url%>">Bootstrap</a>
           <ul class="nav">
             <%= nav_item "Overview", {:controller => 'doc', :action => 'overview'} %>
             <%= nav_item "About", {:controller => 'doc', :action => 'about'} %>
@@ -90,6 +85,10 @@
         </p>
       </div>
     </footer>
+
+    <!-- Le javascript -->
+    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "bootstrap-doc/bootstrap-doc" %>
 
   </body>
 </html>
