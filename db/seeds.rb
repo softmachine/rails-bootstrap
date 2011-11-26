@@ -41,6 +41,12 @@ end
 make_user(Factory.build :user, :name => 'mike', :email => 'meb@kuhl.at')
 make_user(Factory.build :user, :name => 'admin', :email => 'mkuhl@softmachine.at')
 
+Factory.build(:page, :name => "default", :title => "This page does not exists", :content => "but it could...").save!
+Factory.build(:page, :name => "about").save!
+Factory.build(:page, :name => "contact").save!
+Factory.build(:page, :name => "notyet").save!
+Factory.build(:page, :name => "samples").save!
+
 # create posts
 #10.times do
 #  post = Factory.build :blog_post

@@ -11,15 +11,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110920162144) do
+ActiveRecord::Schema.define(:version => 20111126131807) do
 
-  create_table "blog_posts", :force => true do |t|
+  create_table "mercury_images", :force => true do |t|
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pages", :force => true do |t|
     t.string   "name"
     t.string   "title"
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "pages", ["name"], :name => "index_pages_on_name", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false

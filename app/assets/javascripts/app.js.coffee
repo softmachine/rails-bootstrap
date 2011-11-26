@@ -9,3 +9,9 @@ $(document).ready ->
         li = $(this).parent("li").toggleClass('open');
         return false;
 
+    jQuery(top).trigger('initialize:frame');
+
+    $(window).bind 'mercury:saved', ->
+      window.location = window.location.href.replace(/\/editor\//i, '/');
+
+

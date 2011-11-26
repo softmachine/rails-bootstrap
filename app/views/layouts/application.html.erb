@@ -38,7 +38,20 @@
           <ul class="nav">
             <%= nav_item "Home", root_path %>
             <%= nav_item "Documentation", doc_path() %>
-            <%= nav_item "Contact", pages_path('contact') %>
+            <li class="dropdown">
+              <a class="dropdown-toggle" href="#">Pages</a>
+              <ul class="dropdown-menu">
+                <% if user_signed_in? %>
+                    <li><%= link_to "Create new Page", new_page_path %></li>
+                    <% if is_page? %>
+                        <li><%= link_to "Delete Page", page_path(params[:id]), :confirm => "srsly, mate ?", :method => 'delete' %></li>
+                    <% end %>
+                    <li class="divider"></li>
+                <% end %>
+                <%=raw pages_links %>
+              </ul>
+            </li>
+            <%= nav_item "Contact", contact_path %>
             <%= nav_item "About", about_path%>
           </ul>
 
@@ -79,8 +92,11 @@
         <div class="container">
           <div class="row">
             <div class="span3 columns">
+                <% if controller.controller_name  == "pages" && controller.action_name == 'show' && user_signed_in? %>
+                  <p><%= link_to "Edit this page", mercury_editor_path+request.path, id: "edit_link" %></p>
+                <% end %>
                 <p><a href="http://github.com/softmachine/rails-bootstrap">Fork me on Github</a></p>
-                <p><a data-controls-modal="modal_1" data-backdrop="static" >Launch Modal</a></p>
+                <!--<p><a data-controls-modal="modal_1" data-backdrop="static" >Launch Modal</a></p>-->
             </div>
 
             <div class="span10 columns">

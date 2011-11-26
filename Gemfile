@@ -25,6 +25,7 @@ gem 'tilt'
 gem 'jquery-rails'
 gem 'devise'
 gem 'twitter_bootstrap_form_for', :git =>  'git://github.com/softmachine/twitter_bootstrap_form_for.git'
+gem 'mercury-rails', :git => 'https://github.com/jejacks0n/mercury.git'
 
 
 group :development do
@@ -33,7 +34,7 @@ group :development do
   #gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
   gem 'factory_girl_rails'
   gem 'faker'
-  gem 'rails-footnotes'
+  #gem 'rails-footnotes'
 end
 
 group :production do

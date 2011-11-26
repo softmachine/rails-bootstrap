@@ -1,11 +1,18 @@
 Bootstrap::Application.routes.draw do
   devise_for :users
 
-  match 'home/:action' => 'home#:action', :as => :home
+  match 'home/:page' => 'home#show', :as => :home
 
-  match 'about' => 'page#show', :as => :about, :defaults => { :page => 'about' }
-  match 'contact' => 'page#show', :as => :contact, :defaults => { :page => 'contact' }
-  match 'pages/:page' => 'page#show', :as => :pages
+  resources :pages
+  match '/editor(/*requested_uri)' => "page_editor#edit", :as => :mercury_editor
+  Mercury::Engine.routes
+
+
+  put 'about' => 'pages#update',:defaults => { :id => 'about' }
+  get 'about' => 'pages#show', :as => :about, :defaults => { :id => 'about' }
+
+  put   'contact' => 'pages#update',:defaults => { :id => 'contact' }
+  match 'contact' => 'pages#show', :as => :contact, :defaults => { :id => 'contact' }
 
   match 'doc/(:action)' => 'doc#', :as => :doc
 
