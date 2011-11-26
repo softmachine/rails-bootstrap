@@ -1,0 +1,30 @@
+<section id="page_create">
+  <div class="page-header">
+    <h1>Create new Page</h1>
+  </div>
+  <div class="row">
+    <div class="span4 columns">
+      <!--<h3>Default styles</h3>-->
+      <p>Enter the name of the new page.</p>
+      <p>The page name is subsequently used to identify the page as part of the page url.</p>
+    </div>
+
+    <div class="span12 columns">
+      <%= twitter_bootstrap_form_for @page do |f|  %>
+
+        <%= f.inputs do %>
+              <%= f.text_field :name, :placeholder => 'my_new_page'%>
+              <%= f.actions do %>
+                  <%= f.submit 'Create'%>
+                  <%= button_tag  'Cancel', :type => 'reset', :class => 'btn'%>
+              <% end %>
+        <% end %>
+      <% end %>
+    </div>
+
+  </div><!-- /row -->
+
+  <br>
+
+
+</section>
